@@ -52,7 +52,7 @@ print(banks.isnull().sum())
 
 # --------------
 # Code starts here
-
+#creating pivot table
 avg_loan_amount=pd.pivot_table(data=banks,index=['Gender','Married','Self_Employed'],
 values=['LoanAmount'],aggfunc='mean')
 print(avg_loan_amount)
