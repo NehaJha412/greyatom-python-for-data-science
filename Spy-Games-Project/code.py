@@ -1,6 +1,7 @@
 # --------------
 ##File path for the file 
 file_path
+#define a function
 def read_file(path):
     file=open(path,'r')
     sentence=file.readline()
@@ -11,15 +12,17 @@ sample_message=read_file(file_path)
 print(sample_message)
 
 
-#Code starts here
+#Code ends here
 
 
 # --------------
 #Code starts here
+#usinf function defined previously to create new varaiable
 message_1=read_file(file_path_1)
 message_2=read_file(file_path_2)
 print(message_1)
 print(message_2)
+
 def fuse_msg(message_a,message_b):
     quotient=int(message_b)//int(message_a)
     return str(quotient)
