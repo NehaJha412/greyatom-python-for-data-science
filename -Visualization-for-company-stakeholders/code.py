@@ -4,16 +4,18 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+#import data
 data=pd.read_csv(path)
+#get counts of column
 loan_status=data['Loan_Status'].value_counts()
+#plot bar graph
 plt.bar(loan_status.index,loan_status.data)
-#Code starts here
+#Code ends here
 
 
 # --------------
 #Code starts here
-
+#creating unstacked bar graph
 property_and_loan=data.groupby(['Property_Area','Loan_Status'])
 property_and_loan=property_and_loan.size().unstack()
 plot=property_and_loan.plot(kind="bar",stacked=False,figsize=(15,10))
@@ -25,7 +27,7 @@ plt.show()
 
 # --------------
 #Code starts here
-
+#creating stacked bar graph
 education_and_loan=data.groupby(['Education','Loan_Status'])
 education_and_loan=education_and_loan.size().unstack()
 plot=education_and_loan.plot(kind="bar",stacked=True)
@@ -37,6 +39,7 @@ plt.show()
 
 # --------------
 #Code starts here
+#density plot
 graduate=data[data['Education']=='Graduate']
 not_graduate=data[data['Education']=='Not Graduate']
 
@@ -45,12 +48,6 @@ graduate['LoanAmount'].plot(kind='density',label="Graduate")
 
 not_graduate['LoanAmount'].plot(kind='density',label='Not Graduate')
 plt.show()
-
-
-
-
-
-
 
 
 
